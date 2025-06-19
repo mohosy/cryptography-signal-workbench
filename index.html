@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptography Signal Workbench</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="left">
+        <p class="eyebrow">Cipher Intelligence</p>
+        <h1>Cryptography Signal Workbench</h1>
+        <p class="sub">Encode, decode, and analyze message structure using classical cryptography and statistical fingerprints.</p>
+
+        <div class="card">
+          <h2>Input</h2>
+          <textarea id="messageInput" rows="8" placeholder="Paste plaintext or ciphertext..."></textarea>
+        </div>
+
+        <div class="card">
+          <h2>Cipher Controls</h2>
+          <label>Mode
+            <select id="cipherMode">
+              <option value="caesar">Caesar</option>
+              <option value="vigenere">Vigenere</option>
+            </select>
+          </label>
+          <label>Shift / Key
+            <input id="keyInput" type="text" value="3" />
+          </label>
+          <div class="actions">
+            <button id="encryptBtn">Encrypt</button>
+            <button id="decryptBtn">Decrypt</button>
+            <button id="analyzeBtn">Analyze</button>
+          </div>
+        </div>
+
+        <div class="card metrics">
+          <h2>Statistical Signals</h2>
+          <p>Entropy: <strong id="entropyText">0</strong></p>
+          <p>Index of Coincidence: <strong id="iocText">0</strong></p>
+          <p>Likely Cipher Family: <strong id="familyText">Unknown</strong></p>
+        </div>
+      </section>
+
+      <section class="right">
+        <article class="card output-card">
+          <h2>Output</h2>
+          <textarea id="outputArea" rows="7" readonly></textarea>
+        </article>
+        <article class="card chart-card">
+          <h2>Letter Frequency Profile</h2>
+          <canvas id="freqChart" width="960" height="330"></canvas>
+        </article>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

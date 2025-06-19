@@ -1,0 +1,123 @@
+:root {
+  --bg: #100a09;
+  --panel: #241713;
+  --line: #5f3f34;
+  --text: #fff4ef;
+  --muted: #dbbfb4;
+  --accent: #ff9f68;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  font-family: "Outfit", "Segoe UI", sans-serif;
+  background: radial-gradient(circle at 15% 0%, #4a2e25, #140d0b 50%, #080504 100%);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 400px) 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.left,
+.right {
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: linear-gradient(155deg, rgba(36, 23, 19, 0.97), rgba(20, 13, 11, 0.95));
+}
+
+.left { padding: 1rem; }
+.right { padding: 0.9rem; display: grid; gap: 0.8rem; }
+
+.eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+}
+
+h1 {
+  margin: 0.45rem 0;
+  font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+.sub {
+  margin: 0 0 0.86rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: rgba(20, 12, 10, 0.7);
+  padding: 0.72rem;
+  margin-bottom: 0.72rem;
+}
+
+.card h2 {
+  margin: 0 0 0.48rem;
+  font-size: 0.9rem;
+  color: #ffe0d3;
+}
+
+textarea,
+input,
+select,
+button {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #815a49;
+  background: #261913;
+  color: #fff8f3;
+  padding: 0.5rem;
+}
+
+textarea {
+  resize: vertical;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+label {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0.35rem 0;
+  color: #f0cdbf;
+  font-size: 0.86rem;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+button {
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(140deg, #7b4a38, #8d553f);
+}
+
+.metrics p {
+  margin: 0.33rem 0;
+  color: #f2d6ca;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  border: 1px solid #7a5445;
+  border-radius: 10px;
+  background: #170e0b;
+}
+
+@media (max-width: 1080px) {
+  .layout { grid-template-columns: 1fr; }
+}
